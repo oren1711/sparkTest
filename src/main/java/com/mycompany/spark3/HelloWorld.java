@@ -11,6 +11,7 @@ public class HelloWorld {
 
     public static void main(String[] args) {
 
+        get("/", (request, response) -> "home");
         get("/hello", (request, response) -> "i love nofar!!");
         get("/nofar", (request, response) -> "i love nofar!!");
         get("/sayHi/:name", (request, response) -> "hi "+request.params(":name"));
