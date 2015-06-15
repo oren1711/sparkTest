@@ -10,7 +10,8 @@ import static spark.Spark.*;
 public class HelloWorld {
 
     public static void main(String[] args) {
-
+        System.out.println(System.getenv("PORT"));
+        port(Integer.parseInt(System.getenv("PORT")));
         get("/", (request, response) -> "home");
         get("/hello", (request, response) -> "i love nofar!!");
         get("/nofar", (request, response) -> "i love nofar!!");
