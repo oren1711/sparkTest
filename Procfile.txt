@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar spark3.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -jar target/dependency/spark3.jar --port $PORT target/*.war
