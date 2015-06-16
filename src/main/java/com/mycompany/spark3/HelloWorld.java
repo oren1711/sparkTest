@@ -7,18 +7,11 @@ package com.mycompany.spark3;
 
 import static spark.Spark.*;
 
+
 public class HelloWorld {
 
     public static void main(String[] args) {
-        ProcessBuilder process = new ProcessBuilder();
-        Integer port;
-        if (process.environment().get("PORT") != null) {
-            port = Integer.parseInt(process.environment().get("PORT"));
-        } else {
-            port = 8080;
-        }
-        port(port);
-        
+        port(Integer.parseInt(System.getenv("PORT")));
         get("/", (request, response) -> "home");
         get("/hello", (request, response) -> "i love nofar!!");
         get("/nofar", (request, response) -> "i love nofar!!");
